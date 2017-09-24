@@ -1,0 +1,22 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+brew 'coreutils'
+brew 'node'
+brew 'openssl'
+brew 'wget'
+brew 'youtube-dl'
+brew 'python3'
+brew 'curl'
+
+cask '1password'
+cask 'alfred'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'slack'
+cask 'sublime-text'
+cask 'forklift'
+cask 'bartender'
+cask 'iina'
+cask 'iterm2'
