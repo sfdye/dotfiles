@@ -1,4 +1,4 @@
-# Liuyang's dotfiles
+# Wan Liuyang's dotfiles
 My OS X dev environment
 
 ## Screenshot
