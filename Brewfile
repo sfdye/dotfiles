@@ -24,6 +24,7 @@ cask 'bartender'
 cask 'iina'
 cask 'appcleaner'
 cask 'docker'
+cask 'jitouch'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
