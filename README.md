@@ -1,5 +1,8 @@
-# dotfiles
+# Liuyang's dotfiles
 My OS X dev environment
+
+## Screenshot
+To be added
 
 ## Features
 
@@ -10,6 +13,9 @@ My OS X dev environment
 - python
 - sublime text
 - Brewfile
+
+## Installation 
+To be added
 
 ## Inspired by these awesome dotfiles
 - [mihaliak/dotfiles](https://github.com/mihaliak/dotfiles)
