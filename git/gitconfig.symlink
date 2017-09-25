@@ -19,7 +19,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
+        editor = subl --wait
 [apply]
         whitespace = nowarn
 [mergetool]
