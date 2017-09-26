@@ -17,4 +17,10 @@ alias -- -='cd -'
 alias grep='grep --color=auto'
 
 # My IP
-alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Toggle hide/show
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+alias cat=ccat

@@ -4,6 +4,7 @@ tap 'homebrew/bundle'
 
 brew 'coreutils'
 brew 'node'
+brew 'ccat'
 brew 'openssl'
 brew 'wget'
 brew 'youtube-dl'
