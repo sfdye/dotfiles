@@ -8,6 +8,7 @@
   ci = commit
   br = branch
   st = status
+  df = diff
   promote = !$ZSH/bin/git-promote
   wtf     = !$ZSH/bin/git-wtf
   rank-contributors = !$ZSH/bin/git-rank-contributors

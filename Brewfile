@@ -8,7 +8,6 @@ brew 'openssl'
 brew 'wget'
 brew 'youtube-dl'
 brew 'python3'
-brew 'git'
 brew 'tree'
 brew 'jq'
 
@@ -25,6 +24,8 @@ cask 'iina'
 cask 'appcleaner'
 cask 'docker'
 cask 'jitouch'
+cask 'popclip'
+
 
 # Quick Look Plugins
 cask 'qlmarkdown'
