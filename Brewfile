@@ -26,7 +26,16 @@ cask 'appcleaner'
 cask 'docker'
 cask 'jitouch'
 cask 'popclip'
-
+cask 'postman'
+cask 'whatsapp'
+cask 'istat-menus'
+cask 'postgres'
+cask 'caffeine'
+cask 'dbeaver-community'
+cask 'pycharm'
+cask 'clipy'
+cask 'ccmenu'
+cask 'cleanmymac'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
