@@ -36,6 +36,7 @@ cask 'pycharm'
 cask 'clipy'
 cask 'ccmenu'
 cask 'cleanmymac'
+cask 'charles'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
