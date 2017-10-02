@@ -50,11 +50,23 @@ need_push () {
   fi
 }
 
-directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+# user@host for SSH connections, user if not current, nothing otherwise
+user_host() {
+  if [[ -n $SSH_CONNECTION ]]; then
+    me="%{$fg_bold[green]%n@%m%{$reset_color%}"
+  fi
+
+  if [[ -n $me ]]; then
+    echo "$me:"
+  fi
 }
 
-export PROMPT=$'\n $(directory_name) $(git_dirty)$(need_push)\n› '
+directory_name() {
+  echo "%{$fg_bold[cyan]%}%3d%{$reset_color%}"
+}
+
+export PROMPT=$'\n$(user_host)$(directory_name) $(git_dirty)$(need_push)\n› '
+
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
@@ -63,3 +75,4 @@ precmd() {
   title "zsh" "%m" "%55<...<%~"
   set_prompt
 }
+
