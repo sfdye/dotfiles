@@ -50,14 +50,9 @@ need_push () {
   fi
 }
 
-# user@host for SSH connections, user if not current, nothing otherwise
 user_host() {
   if [[ -n $SSH_CONNECTION ]]; then
-    me="%{$fg_bold[green]%n@%m%{$reset_color%}"
-  fi
-
-  if [[ -n $me ]]; then
-    echo "$me:"
+    echo "%{$fg_bold[yellow]%n@%m %{$reset_color%}"
   fi
 }
 
