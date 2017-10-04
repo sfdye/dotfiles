@@ -1,6 +1,9 @@
 alias reload!='. ~/.zshrc'
 
-# alias cls='clear' # Good 'ol Clear Screen command
+# shortcut for editing dotfiles itself
+alias ed='cd ~/.dotfiles && e .'
+
+alias cls='clear' # Good 'ol Clear Screen command
 
 alias l='ls -lrt'
 alias ll='ls -lrta'
@@ -23,4 +26,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-alias cat=ccat
+if [[ $(uname -s) == "Darwin" ]]
+then
+  alias cat=ccat
+fi
