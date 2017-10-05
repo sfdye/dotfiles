@@ -1,5 +1,4 @@
 # Wan Liuyang's dotfiles
-My OS X dev environment
 
 ## Screenshot
 To be added
