@@ -20,7 +20,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor = subl --wait
+  editor = code
 [apply]
   whitespace = nowarn
 [merge]
