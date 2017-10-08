@@ -12,7 +12,7 @@ To be added
 - docker
 - python3 by default, but switchable to python 2 by alias 
 - ruby dev env by rbenv
-- sublime text (to be replaced by vscode)
+- vscode
 - Brewfile
 
 ## Installation 
