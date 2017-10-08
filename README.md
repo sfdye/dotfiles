@@ -1,6 +1,7 @@
 # Wan Liuyang's dotfiles
 
 ## Screenshot
+
 To be added
 
 ## Features
@@ -8,23 +9,24 @@ To be added
 - Ubuntu & macOS friendly
 - zsh
 - iterm
-- git 
+- git
 - docker
-- python3 by default, but switchable to python 2 by alias 
+- python3 by default, but switchable to python 2 by alias
 - ruby dev env by rbenv
 - vscode
 - Brewfile
 
-## Installation 
-1. git clone https://github.com/sfdye/dotfiles.git
-2. script/bootstrap
-3. Done!
-4. Customize whatever you like :)
+## Installation
+
+```bash
+git clone https://github.com/sfdye/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+script/bootstrap
+```
 
 ## Inspired by these awesome dotfiles
+
 - [mihaliak/dotfiles](https://github.com/mihaliak/dotfiles)
 - [nicksp/dotfiles](https://github.com/nicksp/dotfiles)
 - [holman/dotfiles](https://github.com/holman/dotfiles)
 - [sapegin/dotfiles](https://github.com/sapegin/dotfiles)
-
-
