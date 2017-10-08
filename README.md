@@ -5,12 +5,14 @@ To be added
 
 ## Features
 
+- Ubuntu & macOS friendly
 - zsh
 - iterm
 - git 
 - docker
-- python
-- sublime text
+- python3 by default, but switchable to python 2 by alias 
+- ruby dev env by rbenv
+- sublime text (to be replaced by vscode)
 - Brewfile
 
 ## Installation 
