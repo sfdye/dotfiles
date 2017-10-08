@@ -16,7 +16,10 @@ To be added
 - Brewfile
 
 ## Installation 
-To be added
+1. git clone https://github.com/sfdye/dotfiles.git
+2. script/bootstrap
+3. Done!
+4. Customize whatever you like :)
 
 ## Inspired by these awesome dotfiles
 - [mihaliak/dotfiles](https://github.com/mihaliak/dotfiles)
