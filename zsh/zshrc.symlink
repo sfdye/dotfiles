@@ -63,3 +63,6 @@ fi
 # source-highlight
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=" -R "
+
+# rbenv
+eval "$(rbenv init -)"

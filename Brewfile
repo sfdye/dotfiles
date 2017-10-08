@@ -12,6 +12,7 @@ brew 'python3'
 brew 'tree'
 brew 'jq'
 brew 'source-highlight'
+brew 'rbenv'
 
 cask 'iterm2'
 cask 'alfred'
