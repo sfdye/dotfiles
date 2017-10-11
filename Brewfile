@@ -39,6 +39,7 @@ cask 'clipy'
 cask 'ccmenu'
 cask 'cleanmymac'
 cask 'charles'
+cask 'gitify'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
