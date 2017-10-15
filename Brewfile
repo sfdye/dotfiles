@@ -13,6 +13,7 @@ brew 'tree'
 brew 'jq'
 brew 'source-highlight'
 brew 'rbenv'
+brew 'yarn'
 
 cask 'iterm2'
 cask 'alfred'
