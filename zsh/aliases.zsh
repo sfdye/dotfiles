@@ -17,13 +17,6 @@ alias -- -='cd -'
 
 alias grep='grep --color=auto'
 
-# Python 3
-alias python='/usr/local/bin/python3'
-alias python2='/usr/local/bin/python2'
-
-alias pip="/usr/local/bin/pip3"
-alias pip2="/usr/local/bin/pip"
-
 # My IP
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
