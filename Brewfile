@@ -43,7 +43,6 @@ cask 'cleanmymac'
 cask 'charles'
 cask 'gitter'
 cask 'spectacle'
-cask 'gitify'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
