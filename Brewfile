@@ -41,8 +41,8 @@ cask 'ccmenu'
 cask 'cleanmymac'
 cask 'charles'
 cask 'gitter'
-cask 'spectacle'
 cask 'gitify'
+cask 'moom'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
