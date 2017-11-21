@@ -14,6 +14,7 @@ brew 'jq'
 brew 'source-highlight'
 brew 'rbenv'
 brew 'yarn'
+brew 'pgcli'
 
 cask 'iterm2'
 cask 'alfred'
