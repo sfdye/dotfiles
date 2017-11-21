@@ -1,0 +1,6 @@
+[user]
+  name = Wan Liuyang
+  email = tsfdye@gmail.com
+[credential]
+  helper = osxkeychain
+
