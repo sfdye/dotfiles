@@ -44,6 +44,7 @@ cask 'charles'
 cask 'gitter'
 cask 'gitify'
 cask 'moom'
+cask 'paw'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
