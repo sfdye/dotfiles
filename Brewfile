@@ -42,7 +42,6 @@ cask 'ccmenu'
 cask 'cleanmymac'
 cask 'charles'
 cask 'gitter'
-cask 'gitify'
 cask 'moom'
 cask 'paw'
 
