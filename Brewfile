@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 
 brew 'coreutils'
+brew 'git'
 brew 'node'
 brew 'ccat'
 brew 'openssl'
