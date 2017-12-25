@@ -16,6 +16,7 @@ brew 'rbenv'
 brew 'yarn'
 brew 'pgcli'
 brew 'hub'
+brew 'awscli'
 
 cask 'iterm2'
 cask 'alfred'
