@@ -18,6 +18,7 @@ brew 'yarn'
 brew 'pgcli'
 brew 'hub'
 brew 'awscli'
+brew 'aws-shell'
 
 cask 'iterm2'
 cask 'alfred'
