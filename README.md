@@ -11,8 +11,9 @@ To be added
 - iterm
 - git
 - docker
-- python3 by default, but switchable to python 2 by alias
-- ruby dev env by rbenv
+- python3 developmment with virtualenv/virtualenvwrapper
+- ruby dev env with rbenv
+- awscli and aws-shell
 - vscode
 - Brewfile
 
