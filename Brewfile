@@ -47,6 +47,7 @@ cask 'charles'
 cask 'gitter'
 cask 'paw'
 cask 'rocket'
+cask 'ngrok'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
