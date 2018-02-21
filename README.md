@@ -1,4 +1,4 @@
-# Wan Liuyang's dotfiles
+# sfdye's dotfiles
 
 ## Screenshot
 
