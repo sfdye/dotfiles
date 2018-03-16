@@ -19,6 +19,7 @@ brew 'pgcli'
 brew 'hub'
 brew 'awscli'
 brew 'aws-shell'
+brew 'pipenv'
 
 cask 'iterm2'
 cask 'alfred'
