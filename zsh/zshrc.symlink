@@ -74,3 +74,6 @@ export LANG=en_US.UTF-8
 # pipenv
 eval "$(pipenv --completion)"
 
+# hub
+eval "$(hub alias -s)"
+
