@@ -12,7 +12,6 @@ To be added
 - git
 - docker
 - python3 developmment with virtualenv/virtualenvwrapper
-- ruby dev env with rbenv
 - awscli and aws-shell
 - vscode
 - Brewfile
