@@ -19,6 +19,7 @@ brew 'hub'
 brew 'awscli'
 brew 'aws-shell'
 brew 'pipenv'
+brew 'go'
 
 cask 'iterm2'
 cask 'alfred'
