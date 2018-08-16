@@ -75,7 +75,7 @@ eval "$(pipenv --completion)"
 export GOPATH=$HOME/go
 
 # Miniconda
-export MINICONDAPATH=/usr/local/miniconda3
+export CONDAPATH=$HOME/miniconda3
 
 
 # The next line updates PATH for the Google Cloud SDK.
