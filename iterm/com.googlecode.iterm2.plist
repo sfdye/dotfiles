@@ -1063,9 +1063,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1864 219 606 469 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2109 355 796 486 1440 0 1920 1057 </string>
+	<string>2146 334 796 486 1440 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>225 190 1010 639 0 0 1440 877 </string>
+	<string>1739 525 650 452 1440 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2548 259 650 452 1440 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_75C1008D-880F-4118-A26C-C07F5BF802F7</key>
@@ -2027,7 +2027,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/liuyang/.dotfiles/iterm</string>
+	<string>~/.dotfiles/iterm/</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
