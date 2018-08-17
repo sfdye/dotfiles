@@ -19,6 +19,11 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   fi
 
+  # Install brew basics (auto-updating)
+  brew install terminal-notifier
+  brew tap domt4/autoupdate
+  brew autoupdate --start --upgrade --cleanup --enable-notifications
+
 fi
 
 exit 0

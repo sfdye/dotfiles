@@ -1,0 +1,6 @@
+virtualenv
+virtualenvwrapper
+cookiecutter
+black
+requests
+PyGithub
