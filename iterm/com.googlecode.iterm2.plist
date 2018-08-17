@@ -1054,16 +1054,20 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2127 103 445 77 1440 -180 1920 1057 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>652 682 616 174 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2166 439 400 129 1440 -180 1920 1057 </string>
+	<string>2200 696 400 129 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2090 339 620 392 1440 -180 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>1864 219 606 469 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1797 23 918 492 1440 -180 1920 1057 </string>
+	<string>2109 355 796 486 1440 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1703 298 650 452 1440 -180 1920 1057 </string>
+	<string>225 190 1010 639 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>176 444 570 352 0 0 1440 877 </string>
+	<string>2548 259 650 452 1440 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_75C1008D-880F-4118-A26C-C07F5BF802F7</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -1796,7 +1800,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1969,6 +1973,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>535627136.74823803</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -2043,7 +2049,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-23T12:09:44Z</date>
+	<date>2018-08-17T04:17:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2100,6 +2106,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.2</string>
+	<string>3.2.0beta9</string>
 </dict>
 </plist>
