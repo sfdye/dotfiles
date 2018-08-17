@@ -1,3 +1,6 @@
+# Set up virtualenvwrapper
+# https://virtualenvwrapper.readthedocs.io/en/latest/
+
 virtualenvwrapper='/usr/local/bin/virtualenvwrapper.sh'
 
 if test -f $virtualenvwrapper
