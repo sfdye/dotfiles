@@ -1,9 +1,5 @@
 # sfdye's dotfiles
 
-## Screenshot
-
-To be added
-
 ## Features
 
 - Ubuntu & macOS friendly
@@ -26,7 +22,8 @@ script/bootstrap
 
 ## Inspired by these awesome dotfiles
 
-- [mihaliak/dotfiles](https://github.com/mihaliak/dotfiles)
-- [nicksp/dotfiles](https://github.com/nicksp/dotfiles)
-- [holman/dotfiles](https://github.com/holman/dotfiles)
-- [sapegin/dotfiles](https://github.com/sapegin/dotfiles)
+- https://github.com/mihaliak/dotfiles)
+- https://github.com/nicksp/dotfiles
+- https://github.com/holman/dotfiles
+- https://github.com/sapegin/dotfiles
+- https://github.com/kennethreitz/dotfiles
