@@ -4,3 +4,4 @@ cookiecutter
 black
 requests
 PyGithub
+sphinx

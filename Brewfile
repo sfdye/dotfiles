@@ -21,7 +21,6 @@ brew 'awscli'
 brew 'aws-shell'
 brew 'pipenv'
 brew 'go'
-brew 'sphinx-doc'
 
 cask 'iterm2'
 cask 'alfred'
