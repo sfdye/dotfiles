@@ -48,6 +48,8 @@ cask 'gitter'
 cask 'paw'
 cask 'rocket'
 cask 'ngrok'
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
