@@ -49,9 +49,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# source-highlight
-export LESSOPEN="| src-hilite-lesspipe.sh %s"
-export LESS=" -R "
+# bat theme
+export BAT_THEME="TwoDark"
 
 # Locale
 export LC_ALL=en_US.UTF-8

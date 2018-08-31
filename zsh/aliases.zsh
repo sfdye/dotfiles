@@ -24,8 +24,5 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# colorcat
-if [[ $(uname -s) == "Darwin" ]]
-then
-  alias cat=ccat
-fi
+# bat
+alias cat='bat --style=plain,changes'
