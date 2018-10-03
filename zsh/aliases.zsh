@@ -26,3 +26,9 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 
 # bat
 alias cat='bat --style=plain,changes'
+
+# leetcode-cli
+if test $(which leetcode)
+then
+  alias lc='leetcode'
+fi

@@ -1053,9 +1053,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>2127 103 445 77 1440 -180 1920 1057 </string>
+	<string>1727 170 445 77 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>652 682 616 174 0 0 1920 1057 </string>
+	<string>2092 683 616 174 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>2200 696 400 129 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -1063,9 +1063,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1864 219 606 469 1440 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2146 334 796 486 1440 0 1920 1057 </string>
+	<string>2261 490 918 485 1440 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1739 525 650 452 1440 0 1920 1057 </string>
+	<string>1858 295 1098 647 1440 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2548 259 650 452 1440 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_75C1008D-880F-4118-A26C-C07F5BF802F7</key>
@@ -1784,11 +1784,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-RegularForPowerline 14</string>
+			<string>Inconsolata-dzForPowerline 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-RegularForPowerline 14</string>
+			<string>Inconsolata-dzForPowerline 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1956,7 +1956,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>0.99891166227409633</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2049,7 +2049,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-17T04:17:31Z</date>
+	<date>2018-09-19T20:25:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2106,6 +2106,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0beta9</string>
+	<string>3.2.1beta4</string>
 </dict>
 </plist>
