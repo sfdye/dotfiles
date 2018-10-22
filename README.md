@@ -4,10 +4,10 @@
 
 - Ubuntu & macOS friendly
 - Features organized by _topics_, easy to add/remove
-- Install favorite macOS apps from Brewfile
+- Install macOS apps from `homebrew` and `mas-cli`
 - zsh with sensible defaults
 - vscode
-- vim
+- vim 
 - iterm (automatically keep preference in sync)
 - git (with `hub` extension)
 - python environment out of the box (virtualenv/virtualenvwrapper/pipenv)
