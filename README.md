@@ -43,6 +43,9 @@ cd ~/.dotfiles
 # worry about credentials beigin commited accidently
 cp git/gitconfig.local.symlink.example git/gitconfig.local.symlink
 
+# Modify Brewfile/mas-apps.txt
+# remove stuff you don't need or add your favorite apps!
+
 # The fun begins
 script/bootstrap
 ```
