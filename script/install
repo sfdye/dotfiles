@@ -10,5 +10,9 @@ cd "$(dirname $0)"/..
 echo "› brew bundle"
 brew bundle
 
+# Install Mac App Store apps from mas-cli
+# You may need to manually log in to MAS first
+cat mas_app.txt | xargs mas install
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done

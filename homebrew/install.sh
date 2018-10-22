@@ -19,10 +19,13 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   fi
 
-  # Install brew auto-updating
+  # auto-update brew and enable terminal notification
   brew install terminal-notifier
   brew tap domt4/autoupdate
   brew autoupdate --start --upgrade --cleanup --enable-notifications
+
+  # mas-cli
+  brew install mas
 
 fi
 
