@@ -50,7 +50,7 @@ cp git/gitconfig.local.symlink.example git/gitconfig.local.symlink
 script/bootstrap
 ```
 
-If you wanna set up git, renamegitconfig.local.symlink.example
+If you wanna set up git, rename `gitconfig.local.symlink.example`.
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
