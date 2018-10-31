@@ -55,7 +55,3 @@ export BAT_THEME="TwoDark"
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# iterm shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
