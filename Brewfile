@@ -48,6 +48,8 @@ cask 'ngrok'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'the-unarchiver'
+cask 'switchhosts'
+
 
 # Quick Look Plugins
 cask 'qlmarkdown'
