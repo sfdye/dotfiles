@@ -50,7 +50,6 @@ cask 'virtualbox-extension-pack'
 cask 'the-unarchiver'
 cask 'switchhosts'
 
-
 # Quick Look Plugins
 cask 'qlmarkdown'
 cask 'quicklook-json'
