@@ -1,7 +1,7 @@
 # Check for pip
-if test $(which pip)
+if test $(which pip3)
 then
   # Upgrade pip
-  pip install --upgrade pip
-  pip install -r requirements.txt
+  pip3 install --upgrade pip
+  pip3 install -r requirements.txt
 fi

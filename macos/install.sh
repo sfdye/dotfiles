@@ -6,4 +6,7 @@
 echo "› sudo softwareupdate -i -a"
 sudo softwareupdate -i -a
 
-xcode-select --install
+if test ! $(which xcode-select)
+then
+  xcode-select --install
+fi
