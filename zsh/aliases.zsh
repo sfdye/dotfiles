@@ -4,6 +4,7 @@ alias reload!='. ~/.zshrc'
 alias ed='cd $ZSH && e .'
 
 alias cls='clear' # Good 'ol Clear Screen command
+alias ls='lsd'
 alias l='ls -lrt'
 alias ll='ls -lrta'
 alias h='history'
