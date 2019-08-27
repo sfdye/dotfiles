@@ -18,7 +18,6 @@ brew 'pgcli'
 brew 'hub'
 brew 'awscli'
 brew 'aws-shell'
-brew 'pipenv'
 brew 'go'
 # https://github.com/Peltoche/lsd/issues/199#issuecomment-494218334
 brew 'lsd'
