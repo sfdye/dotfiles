@@ -10,7 +10,7 @@
 - vim
 - iterm (automatically keep preference in sync)
 - git (with `hub` extension)
-- python environment out of the box (virtualenv/virtualenvwrapper)
+- python version management (pyenv/pyenv-virtualenv)
 - ruby/go/docker/awscli
 - A lot of useful aliases
 - ...
