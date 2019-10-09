@@ -35,3 +35,7 @@
   default = simple
 [submodule]
 	recurse = true
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
