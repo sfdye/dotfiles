@@ -23,6 +23,7 @@ brew 'aws-shell'
 brew 'go'
 # https://github.com/Peltoche/lsd/issues/199#issuecomment-494218334
 brew 'lsd'
+brew 'rbenv'
 
 cask 'iterm2'
 cask 'alfred'
