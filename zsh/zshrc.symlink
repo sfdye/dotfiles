@@ -56,11 +56,21 @@ export BAT_THEME="TwoDark"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-if command -v pyenv 1>/dev/null 2>&1; then
+# pyenv
+if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
 
-eval "$(rbenv init -)"
+# rbenv
+if command -v rbenv &> /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
+# jenv
+if command -v jenv &> /dev/null; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
