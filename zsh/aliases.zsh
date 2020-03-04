@@ -30,3 +30,7 @@ alias cat='bat --style=plain,changes'
 
 # leetcode-cli
 alias lc='leetcode'
+
+# lazy stuff
+alias ld='lazydocker'
+alias lg='lazygit'
