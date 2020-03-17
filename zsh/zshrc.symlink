@@ -59,8 +59,13 @@ export LANG=en_US.UTF-8
 # pyenv
 if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
+fi
+
+# pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then
+  # keep the prompt
+  unset PYENV_VIRTUALENV_DISABLE_PROMPT
   eval "$(pyenv virtualenv-init -)"
-  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
 # rbenv
