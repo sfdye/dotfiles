@@ -42,5 +42,6 @@
 [fetch]
 	recurseSubmodules = on-demand
 [blame]
-	ignoreRevsFile = .git-blame-ignore-revs
 	markignoredlines = true
+[branch]
+	sort = -committerdate

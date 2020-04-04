@@ -2,7 +2,7 @@
 
 supervisord.log
 supervisord.pid
-
+.idea/
 
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python
@@ -230,3 +230,4 @@ modules.xml
 *.ipr
 
 # End of https://www.gitignore.io/api/jetbrains+iml
+monkeytype.sqlite3
