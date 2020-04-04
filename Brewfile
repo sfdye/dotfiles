@@ -46,6 +46,8 @@ cask 'clipy'
 cask 'paw'
 cask 'rocket'
 cask 'the-unarchiver'
+cask 'bettertouchtool'
+cask 'authy'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
