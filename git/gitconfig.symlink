@@ -12,10 +12,11 @@
   diff = auto
   status = auto
   branch = auto
+  interactive = auto
   ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor = code --wait
+  editor = vim
 [apply]
   whitespace = nowarn
 [merge]
