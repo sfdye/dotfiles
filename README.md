@@ -7,11 +7,11 @@
 - Install macOS apps from `homebrew` and `mas-cli`
 - zsh with sensible defaults
 - vscode
-- vim
-- iterm (automatically keep preference in sync)
-- git (with `hub` extension)
-- python version management (pyenv/pyenv-virtualenv)
-- ruby/go/docker/awscli
+- vimrc with plugin support (via `vim-plug`)
+- iTerm (preference sync via Dropbox)
+- Git (with `hub` and `gh`)
+- Python version management (pyenv/pyenv-virtualenv)
+- Ruby/Go/Docker/awscli
 - A lot of useful aliases
 - ...
 
