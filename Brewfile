@@ -1,10 +1,10 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'homebrew/cask-fonts'
 
 brew 'coreutils'
 brew 'git'
-brew 'hub'
 brew 'hub'
 brew 'github/gh/gh'
 brew 'node'
@@ -50,11 +50,10 @@ cask 'the-unarchiver'
 cask 'bettertouchtool'
 cask 'authy'
 cask 'macupdater'
+cask 'font-fira-code'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 
-tap 'homebrew/cask-fonts'
-cask 'font-fira-code'
