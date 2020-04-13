@@ -49,8 +49,12 @@ cask 'rocket'
 cask 'the-unarchiver'
 cask 'bettertouchtool'
 cask 'authy'
+cask 'macupdater'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
+
+tap 'homebrew/cask-fonts'
+cask 'font-fira-code'
