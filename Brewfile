@@ -29,6 +29,7 @@ brew 'go'
 brew 'lsd'
 brew 'lazydocker'
 brew 'lazygit'
+brew 'switchaudio-osx'
 
 cask 'iterm2'
 cask 'alfred'
