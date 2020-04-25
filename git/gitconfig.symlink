@@ -31,14 +31,12 @@
   #
   # Setting to git 2.0 default to suppress warning message
   default = simple
-[submodule]
-	recurse = true
 [status]
 	submoduleSummary = true
 [diff]
 	submodule = log
 [fetch]
-	recurseSubmodules = on-demand
+	recurseSubmodules = check
 [blame]
 	markignoredlines = true
 [branch]
