@@ -1,9 +1,3 @@
-# My own rules
-
-supervisord.log
-supervisord.pid
-.idea/
-
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python
 
@@ -231,3 +225,10 @@ modules.xml
 
 # End of https://www.gitignore.io/api/jetbrains+iml
 monkeytype.sqlite3
+
+# User Custom rules
+
+supervisord.log
+supervisord.pid
+.idea/
+.rakeTasks
