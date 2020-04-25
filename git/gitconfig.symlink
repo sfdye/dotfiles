@@ -8,9 +8,6 @@
   st = status
   df = diff
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  sdiff =  '!'git diff && git submodule foreach 'git diff'
-  spush = push --recurse-submodules=on-demand
-  supdate = submodule update --remote --merge
 [color]
   diff = auto
   status = auto
@@ -39,7 +36,7 @@
 [diff]
 	submodule = log
 [fetch]
-	recurseSubmodules = on-demand
+	recurseSubmodules = no
 [push]
 	recurseSubmodules = on-demand
 [blame]
