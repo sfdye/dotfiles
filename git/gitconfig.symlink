@@ -17,6 +17,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor = vim
+  pager = delta --plus-color="#012800" --minus-color="#340001"
 [apply]
   whitespace = nowarn
 [merge]
@@ -43,3 +44,5 @@
 	markignoredlines = true
 [branch]
 	sort = -committerdate
+[interactive]
+  diffFilter = delta --color-only

@@ -30,6 +30,7 @@ brew 'lsd'
 brew 'lazydocker'
 brew 'lazygit'
 brew 'switchaudio-osx'
+brew 'git-delta'
 
 cask 'iterm2'
 cask 'alfred'
