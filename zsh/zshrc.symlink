@@ -71,8 +71,6 @@ if command -v pyenv &> /dev/null; then
   pyenv virtualenvwrapper_lazy
 fi
 
-
-
 # rbenv
 if command -v rbenv &> /dev/null; then
   eval "$(rbenv init -)"
