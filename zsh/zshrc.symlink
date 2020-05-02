@@ -59,14 +59,19 @@ export LANG=en_US.UTF-8
 # pyenv
 if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
-fi
 
-# pyenv-virtualenv
-if which pyenv-virtualenv-init > /dev/null; then
-  # keep the prompt
+  # pyenv-virtualenv
   unset PYENV_VIRTUALENV_DISABLE_PROMPT
   eval "$(pyenv virtualenv-init -)"
+
+  # pyenv-virtualenvwrapper
+  export WORKON_HOME=~/.pyenv/versions
+  export PROJECT_HOME=$PROJECTS
+  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+  pyenv virtualenvwrapper_lazy
 fi
+
+
 
 # rbenv
 if command -v rbenv &> /dev/null; then
