@@ -47,6 +47,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -109,6 +111,10 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Disable always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
