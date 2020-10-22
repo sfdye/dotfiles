@@ -43,3 +43,5 @@
 	sort = -committerdate
 [interactive]
   diffFilter = delta --color-only
+[sequence]
+	editor = interactive-rebase-tool
