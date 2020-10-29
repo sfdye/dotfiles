@@ -34,3 +34,6 @@ alias lc='leetcode'
 # lazy stuff
 alias ld='lazydocker'
 alias lg='lazygit'
+
+# k8s
+alias k='kubectl'
