@@ -27,8 +27,6 @@ brew 'aws-shell'
 brew 'go'
 # https://github.com/Peltoche/lsd/issues/199#issuecomment-494218334
 brew 'lsd'
-brew 'lazydocker'
-brew 'lazygit'
 brew 'switchaudio-osx'
 brew 'git-delta'
 brew 'pre-commit'
