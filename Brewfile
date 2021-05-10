@@ -30,6 +30,7 @@ brew 'lsd'
 brew 'switchaudio-osx'
 brew 'git-delta'
 brew 'pre-commit'
+brew 'maccy'
 
 cask 'iterm2'
 cask 'alfred'

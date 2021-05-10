@@ -56,8 +56,10 @@ export BAT_THEME="TwoDark"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# homebrew on apple silicon
-eval $(/opt/homebrew/bin/brew shellenv)
+# Brew init for Apple Silicon
+if [[ `uname -m` == 'arm64' ]]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # pyenv
 if command -v pyenv &> /dev/null; then
