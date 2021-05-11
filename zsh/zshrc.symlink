@@ -29,7 +29,7 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
+autoload -U +X compinit
 compinit
 
 # load every completion after autocomplete loads
