@@ -47,6 +47,7 @@ cask 'the-unarchiver'
 cask 'authy'
 cask 'macupdater'
 cask 'font-fira-code'
+cask 'font-hack-nerd-font'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
