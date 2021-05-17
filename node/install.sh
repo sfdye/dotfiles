@@ -4,4 +4,4 @@ then
 fi
 
 # aflred kill
-npm install -g alfred-fkill
+sudo npm install -g alfred-fkill
