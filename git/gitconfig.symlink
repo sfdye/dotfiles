@@ -19,10 +19,21 @@
   pager = delta --plus-color="#012800" --minus-color="#340001"
 [apply]
   whitespace = nowarn
-[merge]
-  tool = opendiff
+[diff]
+  submodule = log
+  tool = meld
 [difftool]
   prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = /Applications/Meld.app/Contents/MacOS/Meld \"$LOCAL\" \"$REMOTE\"
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = /Applications/Meld.app/Contents/MacOS/Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
 [help]
   autocorrect = 1
 [push]
@@ -30,9 +41,6 @@
   recurseSubmodules = on-demand
 [status]
 	submoduleSummary = true
-[diff]
-	submodule = log
-[fetch]
 [pull]
 	ff = only
 	recurseSubmodules = no
@@ -44,3 +52,5 @@
   diffFilter = delta --color-only
 [sequence]
 	editor = interactive-rebase-tool
+
+

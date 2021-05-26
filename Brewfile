@@ -49,6 +49,7 @@ cask 'authy'
 cask 'macupdater'
 cask 'font-fira-code'
 cask 'font-hack-nerd-font'
+cask 'meld'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
