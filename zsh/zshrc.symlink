@@ -52,11 +52,11 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 # bat theme
 export BAT_THEME="TwoDark"
 
-# Locale
+# locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Brew init for Apple Silicon
+# brew init for Apple Silicon
 if [[ `uname -m` == 'arm64' ]]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
@@ -96,4 +96,7 @@ if command -v jenv &> /dev/null; then
   eval "$(jenv init -)"
 fi
 
+# fzf & fd
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

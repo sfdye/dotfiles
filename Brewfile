@@ -31,6 +31,7 @@ brew 'switchaudio-osx'
 brew 'git-delta'
 brew 'pre-commit'
 brew 'maccy'
+brew 'fd'
 brew 'fzf'
 
 cask 'iterm2'
