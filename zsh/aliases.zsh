@@ -26,10 +26,10 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # bat
-alias cat='bat --style=plain,changes'
-
-# leetcode-cli
-alias lc='leetcode'
+alias cat='bat --style=plain,changes'w
 
 # k8s
 alias k='kubectl'
+
+# lazygit
+alias lg='lazygit'
