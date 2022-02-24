@@ -232,3 +232,5 @@ supervisord.log
 supervisord.pid
 .idea/
 .rakeTasks
+
+.vscode/
