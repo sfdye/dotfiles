@@ -26,7 +26,7 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # bat
-alias cat='bat --style=plain,changes'w
+alias cat='bat --style=plain,changes'
 
 # k8s
 alias k='kubectl'
