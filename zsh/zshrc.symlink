@@ -101,3 +101,8 @@ export FZF_DEFAULT_COMMAND='fd --type file --color=always'
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 1Password
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+
