@@ -30,7 +30,6 @@ brew 'lsd'
 brew 'switchaudio-osx'
 brew 'git-delta'
 brew 'pre-commit'
-brew 'maccy'
 brew 'fd'
 brew 'fzf'
 
@@ -51,6 +50,7 @@ cask 'authy'
 cask 'macupdater'
 cask 'font-fira-code'
 cask 'font-hack-nerd-font'
+cask 'maccy'
 cask 'meld'
 
 # Quick Look Plugins
