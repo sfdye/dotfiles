@@ -32,6 +32,7 @@ brew 'git-delta'
 brew 'pre-commit'
 brew 'fd'
 brew 'fzf'
+brew 'meetingbar'
 
 cask 'iterm2'
 cask 'alfred'
