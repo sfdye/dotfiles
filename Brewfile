@@ -31,7 +31,6 @@ brew 'git-delta'
 brew 'pre-commit'
 brew 'fd'
 brew 'fzf'
-brew 'vagrant'
 brew 'meetingbar'
 
 cask 'iterm2'
@@ -53,6 +52,7 @@ cask 'font-fira-code'
 cask 'font-hack-nerd-font'
 cask 'maccy'
 cask 'meld'
+cask 'vagrant'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
