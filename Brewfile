@@ -32,6 +32,8 @@ brew 'pre-commit'
 brew 'fd'
 brew 'fzf'
 brew 'meetingbar'
+brew 'kubie'
+brew 'stern'
 
 cask 'iterm2'
 cask 'alfred'
