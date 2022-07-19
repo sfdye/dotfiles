@@ -27,11 +27,11 @@ brew 'aws-shell'
 brew 'go'
 # https://github.com/Peltoche/lsd/issues/199#issuecomment-494218334
 brew 'lsd'
-brew 'switchaudio-osx'
 brew 'git-delta'
 brew 'pre-commit'
 brew 'fd'
 brew 'fzf'
+brew 'vagrant'
 brew 'meetingbar'
 
 cask 'iterm2'
