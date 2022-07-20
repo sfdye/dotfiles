@@ -3,58 +3,73 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 
+# Esentials
 brew 'coreutils'
 brew 'git'
 brew 'git-extras'
 brew 'github/gh/gh'
-brew 'node'
-brew 'bat'
+
+
 brew 'openssl'
 brew 'wget'
-brew 'youtube-dl'
+
+# Python dev
 brew 'python'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'pyenv-virtualenvwrapper'
+brew 'pre-commit'
+
+# Other dev
+brew 'node'
 brew 'rbenv'
 brew 'jenv'
+brew 'go'
 brew 'ipython'
+
+# Useful cli
 brew 'tree'
+brew 'bat'
 brew 'jq'
 brew 'yarn'
 brew 'awscli'
 brew 'aws-shell'
-brew 'go'
 # https://github.com/Peltoche/lsd/issues/199#issuecomment-494218334
 brew 'lsd'
 brew 'git-delta'
-brew 'pre-commit'
 brew 'fd'
 brew 'fzf'
-brew 'meetingbar'
+
+# Kubernetes
+cask 'docker'
 brew 'kubie'
 brew 'stern'
 
-cask 'iterm2'
+# Apps
 cask 'alfred'
+cask 'meetingbar'
+cask 'maccy'
+cask 'telegram'
+cask 'messenger'
+cask 'cardhop'
+cask 'fantastical'
+cask 'baidunetdisk'
+cask 'iterm2'
 cask 'slack'
 cask 'visual-studio-code'
-cask 'bartender'
 cask 'iina'
 cask 'appcleaner'
-cask 'docker'
 cask 'whatsapp'
 cask 'paw'
 cask 'rocket'
-cask 'rectangle'
+cask 'rectangle-pro'
 cask 'the-unarchiver'
 cask 'authy'
 cask 'macupdater'
+
+# Fonts
 cask 'font-fira-code'
 cask 'font-hack-nerd-font'
-cask 'maccy'
-cask 'meld'
-cask 'vagrant'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
