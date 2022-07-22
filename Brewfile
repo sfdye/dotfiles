@@ -39,6 +39,7 @@ brew 'lsd'
 brew 'git-delta'
 brew 'fd'
 brew 'fzf'
+brew 'git-interactive-rebase-tool'
 
 # Kubernetes
 cask 'docker'
