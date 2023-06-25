@@ -52,5 +52,5 @@
   diffFilter = delta --color-only
 [sequence]
 	editor = interactive-rebase-tool
-
-
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager

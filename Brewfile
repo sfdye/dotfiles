@@ -2,13 +2,14 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
+tap 'microsoft/git'
 
 # Esentials
 brew 'coreutils'
 brew 'git'
 brew 'git-extras'
+brew 'git-credential-manager-core'
 brew 'github/gh/gh'
-
 
 brew 'openssl'
 brew 'wget'
