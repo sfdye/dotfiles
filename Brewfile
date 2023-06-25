@@ -40,6 +40,7 @@ brew 'lsd'
 brew 'git-delta'
 brew 'fd'
 brew 'fzf'
+brew 'atuin'
 brew 'git-interactive-rebase-tool'
 
 # Kubernetes
