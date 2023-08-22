@@ -9,7 +9,7 @@ brew 'coreutils'
 brew 'git'
 brew 'git-extras'
 brew 'git-credential-manager-core'
-brew 'github/gh/gh'
+brew 'gh'
 
 brew 'openssl'
 brew 'wget'
