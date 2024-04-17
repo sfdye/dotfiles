@@ -7,6 +7,7 @@
   br = branch
   st = status
   df = diff
+  bclean="!f() { git branch --merged ${1-main} | grep -v " ${1-main}$" | xargs git branch -d; }; f"
 [color]
   diff = auto
   status = auto
@@ -54,3 +55,5 @@
 	editor = interactive-rebase-tool
 [credential]
 	helper = /usr/local/share/gcm-core/git-credential-manager
+[url "git@github.com:"]
+ insteadOf = https://github.com/
