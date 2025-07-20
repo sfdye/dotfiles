@@ -44,7 +44,10 @@
 	submoduleSummary = true
 [pull]
 	ff = only
+  rebase = true
 	recurseSubmodules = no
+[rebase]
+  autostash = true
 [blame]
 	markignoredlines = true
 [branch]
