@@ -1,14 +1,11 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
 tap 'microsoft/git'
 
 # Esentials
 brew 'coreutils'
 brew 'git'
 brew 'git-extras'
-brew 'git-credential-manager-core'
 brew 'gh'
 
 brew 'openssl'
@@ -42,6 +39,7 @@ brew 'fd'
 brew 'fzf'
 brew 'atuin'
 brew 'git-interactive-rebase-tool'
+brew 'mas'
 
 # Kubernetes
 cask 'docker'
@@ -51,12 +49,10 @@ brew 'stern'
 # Apps
 cask 'alfred'
 cask 'meetingbar'
+cask 'setapp'
 cask 'maccy'
 cask 'telegram'
 cask 'messenger'
-cask 'cardhop'
-cask 'fantastical'
-cask 'baidunetdisk'
 cask 'iterm2'
 cask 'slack'
 cask 'visual-studio-code'
@@ -66,8 +62,17 @@ cask 'whatsapp'
 cask 'rocket'
 cask 'rectangle-pro'
 cask 'the-unarchiver'
-cask 'authy'
 cask 'macupdater'
+cask 'git-credential-manager'
+cask 'spotify'
+cask '1password'
+cask 'lunar'
+cask 'todoist'
+cask 'karabiner-elements'
+cask 'mimestream'
+
+# Bartender substitute
+cask 'jordanbaird-ice'
 
 # Fonts
 cask 'font-fira-code'

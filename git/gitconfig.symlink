@@ -56,7 +56,10 @@
   diffFilter = delta --color-only
 [sequence]
 	editor = interactive-rebase-tool
-[credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
 [url "git@github.com:"]
  insteadOf = https://github.com/
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
