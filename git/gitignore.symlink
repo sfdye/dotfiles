@@ -234,3 +234,5 @@ supervisord.pid
 .rakeTasks
 
 .vscode/
+
+.claude/
