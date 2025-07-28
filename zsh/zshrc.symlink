@@ -117,3 +117,8 @@ export NVM_DIR="$HOME/.nvm"
 if command -v gh &> /dev/null; then
   eval "$(gh copilot alias -- zsh)"
 fi
+
+# Claude code
+if command -v claude &> /dev/null; then
+  alias ccd='claude --dangerously-skip-permissions'
+fi
