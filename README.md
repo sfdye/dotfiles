@@ -8,7 +8,7 @@
 - zsh with sensible defaults
 - vscode
 - vimrc with plugin support (via `vim-plug`)
-- iTerm (preference sync via Dropbox)
+- iTerm (preference sync via Google Drive)
 - Git (with `hub` and `gh`)
 - Python version management (pyenv/pyenv-virtualenv)
 - Ruby/Go/Docker/awscli
