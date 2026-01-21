@@ -85,10 +85,6 @@ if command -v pyenv &> /dev/null; then
   pyenv virtualenvwrapper_lazy
 fi
 
-# rbenv
-if command -v rbenv &> /dev/null; then
-  eval "$(rbenv init -)"
-fi
 
 # jenv
 if command -v jenv &> /dev/null; then
@@ -119,6 +115,9 @@ if command -v gh &> /dev/null; then
 fi
 
 # Claude code
+export PATH="$HOME/.local/bin:$PATH"
+
 if command -v claude &> /dev/null; then
   alias ccd='claude --dangerously-skip-permissions'
 fi
+
