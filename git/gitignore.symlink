@@ -236,3 +236,10 @@ supervisord.pid
 .vscode/
 
 .claude/
+
+### Eclipse / jdtls ###
+# Eclipse JDT Language Server project files
+.classpath
+.project
+.settings/
+.factorypath
