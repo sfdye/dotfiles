@@ -20,7 +20,7 @@ brew 'pre-commit'
 
 # Other dev
 brew 'node'
-brew 'rbenv'
+brew 'asdf'
 brew 'jenv'
 brew 'go'
 brew 'ipython'
