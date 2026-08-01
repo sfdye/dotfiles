@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.lwan.gh-poi-cleanup</string>
+
+    <!-- install.sh rewrites __HOME__ to the real home directory. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>__HOME__/.local/bin/gh-poi-cleanup</string>
+    </array>
+
+    <!-- Run daily at 3:07am local time. Deletes merged/closed branches and
+         their worktrees across every repo under ~/Code, via gh-poi. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>7</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/gh-poi-cleanup.log</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/gh-poi-cleanup.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>__HOME__</string>
+    </dict>
+</dict>
+</plist>
