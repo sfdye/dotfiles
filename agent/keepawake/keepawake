@@ -1,0 +1,250 @@
+#!/bin/bash
+# keepawake — keep the Mac awake ONLY while work actually needs it.
+#
+# A dependency-light reimplementation of the *design* of adrafinil
+# (https://github.com/kageroumado/adrafinil): hook-driven acquire/release,
+# reference-counted holds, and a self-healing sweep — but as a shell CLI plus
+# Claude Code hooks. No menu-bar app, no root daemon.
+#
+# Model
+#   Each "hold" is a file under $HOLDS_DIR. While >=1 valid hold exists we keep a
+#   single `caffeinate -i -m` alive (blocks idle SYSTEM sleep; lid open). If
+#   clamshell mode is enabled we ALSO run `sudo -n pmset -a disablesleep 1` — the
+#   only way to beat lid-CLOSED sleep, since caffeinate/IOPMAssertion cannot.
+#   `keepawake sweep` reconciles desired vs. actual state and is run every 60s by
+#   a LaunchAgent, so missed Stop hooks, dead sessions, and reboots self-heal.
+
+set -uo pipefail
+
+PMSET=/usr/bin/pmset
+CAFFEINATE=/usr/bin/caffeinate
+
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/keepawake"
+HOLDS_DIR="$STATE_DIR/holds"
+PIDFILE="$STATE_DIR/caffeinate.pid"
+CONFIG="$STATE_DIR/config"
+LOG="$STATE_DIR/keepawake.log"
+LOCK="$STATE_DIR/.lock"
+
+MAX_AGE_SECONDS=$(( 12 * 3600 ))   # safety net: no hold outlives this
+
+mkdir -p "$HOLDS_DIR"
+
+now() { date +%s; }
+log() { printf '%s %s\n' "$(date '+%Y-%m-%dT%H:%M:%S')" "$*" >> "$LOG" 2>/dev/null; }
+
+clamshell_enabled() { [ -f "$CONFIG" ] && grep -q '^clamshell=1$' "$CONFIG"; }
+pid_alive() { [ -n "${1:-}" ] && kill -0 "$1" 2>/dev/null; }
+
+# Read a hold file once, populating pid/reason/created/expires in the caller.
+read_hold() {
+  local k v
+  pid= reason= created= expires=
+  while IFS='=' read -r k v; do
+    case "$k" in
+      pid) pid=$v ;; reason) reason=$v ;; created) created=$v ;; expires) expires=$v ;;
+    esac
+  done < "$1" 2>/dev/null
+}
+
+# Walk up the process tree from the hook shell to the real agent process, so a
+# hold is tied to the session's lifetime rather than the transient hook shell.
+find_agent_pid() {
+  local pid="${1:-$PPID}" comm ppid guard=0
+  while [ "${pid:-0}" -gt 1 ] && [ "$guard" -lt 20 ]; do
+    # One ps call yields both this process's parent and name; ppid is read
+    # first as a single token so comm may safely contain spaces.
+    read -r ppid comm < <(ps -o ppid=,comm= -p "$pid" 2>/dev/null)
+    case "$comm" in
+      *claude*|*cursor*|*codex*|*node*) echo "$pid"; return 0 ;;
+    esac
+    pid="$ppid"
+    guard=$((guard+1))
+  done
+  echo "${1:-$PPID}"
+}
+
+# "30m" "2h" "600s" "45"(min) -> absolute epoch expiry. Empty in -> empty out.
+parse_duration() {
+  local d="${1:-}" n unit secs
+  [ -z "$d" ] && { printf ''; return; }
+  n="${d%[smhd]}"; unit="${d#"$n"}"
+  case "$unit" in
+    s) secs="$n" ;;
+    h) secs=$(( n * 3600 )) ;;
+    d) secs=$(( n * 86400 )) ;;
+    *) secs=$(( n * 60 )) ;;   # m or bare number
+  esac
+  printf '%s' "$(( $(now) + secs ))"
+}
+
+write_hold() {
+  local key="$1" pid="$2" reason="$3" expires="$4" f="$HOLDS_DIR/$1"
+  {
+    printf 'pid=%s\n' "$pid"
+    printf 'reason=%s\n' "$reason"
+    printf 'created=%s\n' "$(now)"
+    [ -n "$expires" ] && printf 'expires=%s\n' "$expires"
+  } > "$f"
+}
+
+hold_count() {
+  local f
+  shopt -s nullglob
+  f=("$HOLDS_DIR"/*)
+  printf '%s' "${#f[@]}"
+}
+
+prune() {
+  local f key pid expires created now
+  now="$(now)"
+  shopt -s nullglob
+  for f in "$HOLDS_DIR"/*; do
+    key="${f##*/}"
+    read_hold "$f"
+    if [ -n "$expires" ] && [ "$now" -ge "$expires" ]; then
+      rm -f "$f"; log "prune expired $key"; continue
+    fi
+    if [ -n "$created" ] && [ $(( now - created )) -ge "$MAX_AGE_SECONDS" ]; then
+      rm -f "$f"; log "prune stale $key"; continue
+    fi
+    if [ -n "$pid" ] && ! pid_alive "$pid"; then
+      rm -f "$f"; log "prune dead-pid $key (pid $pid)"; continue
+    fi
+  done
+}
+
+caffeinate_running() {
+  [ -f "$PIDFILE" ] || return 1
+  pid_alive "$(<"$PIDFILE")"
+}
+start_caffeinate() {
+  caffeinate_running && return 0
+  "$CAFFEINATE" -i -m &
+  printf '%s' "$!" > "$PIDFILE"
+  log "started caffeinate pid $!"
+}
+stop_caffeinate() {
+  local p
+  [ -f "$PIDFILE" ] || return 0
+  p="$(<"$PIDFILE")"
+  pid_alive "$p" && { kill "$p" 2>/dev/null; log "stopped caffeinate pid $p"; }
+  rm -f "$PIDFILE"
+}
+
+read_disablesleep() {
+  local v
+  v="$("$PMSET" -g 2>/dev/null | sed -n 's/.*disablesleep[[:space:]]*\([0-9]\).*/\1/p' | head -1)"
+  printf '%s' "${v:-0}"
+}
+# Toggle lid-closed sleep. Non-interactive sudo only — never blocks on a password.
+set_disablesleep() {
+  local want="$1"
+  [ "$(read_disablesleep)" = "$want" ] && return 0
+  if sudo -n "$PMSET" -a disablesleep "$want" 2>/dev/null; then
+    log "set disablesleep=$want"
+  else
+    log "WARN could not set disablesleep=$want (no NOPASSWD sudoers grant?)"
+  fi
+}
+
+reconcile() {
+  local tries=0
+  while ! mkdir "$LOCK" 2>/dev/null; do
+    tries=$((tries+1)); [ "$tries" -ge 50 ] && { log "lock timeout"; break; }
+    sleep 0.1
+  done
+  trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
+
+  prune
+  if [ "$(hold_count)" -gt 0 ]; then
+    start_caffeinate
+    clamshell_enabled && set_disablesleep 1
+  else
+    stop_caffeinate
+    clamshell_enabled && set_disablesleep 0
+  fi
+
+  rmdir "$LOCK" 2>/dev/null
+  trap - EXIT INT TERM
+}
+
+cmd_acquire() {
+  local key="${1:-}" reason="" expires=""; shift || true
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      --reason) reason="${2:-}"; shift 2 ;;
+      --for)    expires="$(parse_duration "${2:-}")"; shift 2 ;;
+      *)        shift ;;
+    esac
+  done
+  [ -z "$key" ] && { echo "usage: keepawake acquire <key> [--reason r] [--for 30m]" >&2; return 2; }
+  write_hold "$key" "$(find_agent_pid)" "$reason" "$expires"
+  log "acquire $key reason='$reason'"
+  reconcile
+}
+
+cmd_release() {
+  local key="${1:-}"
+  [ -z "$key" ] && { echo "usage: keepawake release <key>" >&2; return 2; }
+  rm -f "$HOLDS_DIR/$key"
+  log "release $key"
+  reconcile
+}
+
+cmd_on() {
+  local expires=""
+  [ "${1:-}" = "--for" ] && expires="$(parse_duration "${2:-}")"
+  write_hold "manual" "" "manual keep-awake" "$expires"
+  log "manual on${expires:+ until $expires}"
+  reconcile
+  cmd_status
+}
+cmd_off() { rm -f "$HOLDS_DIR/manual"; log "manual off"; reconcile; cmd_status; }
+
+cmd_clamshell() {
+  case "${1:-}" in
+    on)  printf 'clamshell=1\n' > "$CONFIG"; echo "clamshell mode: ON"; reconcile ;;
+    off) printf 'clamshell=0\n' > "$CONFIG"
+         sudo -n "$PMSET" -a disablesleep 0 2>/dev/null || true
+         echo "clamshell mode: OFF"; reconcile ;;
+    *)   clamshell_enabled && echo on || echo off ;;
+  esac
+}
+
+cmd_status() {
+  prune
+  local n; n="$(hold_count)"
+  echo "keep-awake : $([ "$n" -gt 0 ] && echo ACTIVE || echo idle) ($n hold(s))"
+  echo "clamshell  : $(clamshell_enabled && echo on || echo off)"
+  if caffeinate_running; then echo "caffeinate : running (pid $(<"$PIDFILE"))"; else echo "caffeinate : stopped"; fi
+  clamshell_enabled && echo "disablesleep: $(read_disablesleep)"
+  local f
+  shopt -s nullglob
+  for f in "$HOLDS_DIR"/*; do
+    read_hold "$f"
+    printf '  • %-30s pid=%-7s %s\n' "${f##*/}" "$pid" "$reason"
+  done
+}
+
+case "${1:-}" in
+  acquire)   shift; cmd_acquire "$@" ;;
+  release)   shift; cmd_release "$@" ;;
+  sweep)     reconcile ;;
+  status)    cmd_status ;;
+  on)        shift; cmd_on "$@" ;;
+  off)       cmd_off ;;
+  clamshell) shift; cmd_clamshell "$@" ;;
+  *) cat >&2 <<'EOF'
+keepawake — keep the Mac awake only while work needs it
+
+  keepawake acquire <key> [--reason r] [--for 30m]   record a hold
+  keepawake release <key>                            drop a hold
+  keepawake on [--for 30m]                            manual keep-awake
+  keepawake off                                       end manual keep-awake
+  keepawake status                                    show current state
+  keepawake sweep                                     reconcile state (LaunchAgent runs this)
+  keepawake clamshell on|off                          lid-closed support (needs sudoers grant)
+EOF
+     exit 2 ;;
+esac
