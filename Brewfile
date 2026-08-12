@@ -53,7 +53,7 @@ cask 'setapp'
 cask 'maccy'
 cask 'telegram'
 cask 'messenger'
-cask 'iterm2'
+cask 'warp'
 cask 'slack'
 cask 'visual-studio-code'
 cask 'iina'
@@ -78,6 +78,7 @@ cask 'jordanbaird-ice'
 # Fonts
 cask 'font-fira-code'
 cask 'font-hack-nerd-font'
+cask 'font-google-sans-code'
 
 # Quick Look Plugins
 cask 'qlmarkdown'

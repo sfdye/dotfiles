@@ -8,7 +8,7 @@
 - zsh with sensible defaults
 - vscode
 - vimrc with plugin support (via `vim-plug`)
-- iTerm (preference sync via Google Drive)
+- Warp (themes/keybindings versioned here, settings via Warp's own sync)
 - Git (with `hub` and `gh`)
 - Python version management (pyenv/pyenv-virtualenv)
 - Ruby/Go/Docker/awscli
