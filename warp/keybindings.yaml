@@ -1,0 +1,11 @@
+---
+# Custom Warp keybindings, as `action: keys` pairs. The authoritative list of
+# action names is in Warp itself: Settings → Keyboard shortcuts (or search the
+# command palette for "keybindings"); docs at https://docs.warp.dev.
+#
+# Example:
+#   terminal:clear_blocks: cmd-k
+#   workspace:new_window: cmd-n
+#
+# Replace the {} below once you add a real binding.
+{}
