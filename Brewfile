@@ -1,12 +1,12 @@
 cask_args appdir: '/Applications'
 
-tap 'microsoft/git'
-
 # Esentials
 brew 'coreutils'
 brew 'git'
 brew 'git-extras'
+brew 'git-lfs'
 brew 'gh'
+brew 'lazygit'
 
 brew 'openssl'
 brew 'wget'
@@ -17,12 +17,17 @@ brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'pyenv-virtualenvwrapper'
 brew 'pre-commit'
+brew 'poetry'
 
 # Other dev
 brew 'node'
 brew 'asdf'
 brew 'jenv'
+brew 'maven'
+brew 'gradle'
+brew 'jdtls'
 brew 'go'
+brew 'go-task'
 brew 'ipython'
 
 # Useful cli
@@ -37,14 +42,23 @@ brew 'lsd'
 brew 'git-delta'
 brew 'fd'
 brew 'fzf'
+brew 'ripgrep'
 brew 'atuin'
 brew 'git-interactive-rebase-tool'
+brew 'git-cliff'
+brew 'terminal-notifier'
 brew 'mas'
 
 # Kubernetes
-cask 'docker'
+cask 'docker-desktop'
+brew 'docker-compose'
 brew 'kubie'
 brew 'stern'
+
+# AI
+brew 'pi-coding-agent'
+cask 'codex'
+cask 'copilot-cli'
 
 # Apps
 cask 'alfred'
@@ -52,7 +66,6 @@ cask 'meetingbar'
 cask 'setapp'
 cask 'maccy'
 cask 'telegram'
-cask 'messenger'
 cask 'warp'
 cask 'slack'
 cask 'visual-studio-code'
@@ -60,6 +73,7 @@ cask 'iina'
 cask 'appcleaner'
 cask 'whatsapp'
 cask 'google-drive'
+cask 'maestral'
 cask 'rocket'
 cask 'rectangle-pro'
 cask 'the-unarchiver'
@@ -71,6 +85,9 @@ cask 'lunar'
 cask 'todoist'
 cask 'karabiner-elements'
 cask 'mimestream'
+cask 'gcloud-cli'
+cask 'handy'
+cask 'swiftbar'
 
 # Bartender substitute
 cask 'jordanbaird-ice'
@@ -82,6 +99,4 @@ cask 'font-google-sans-code'
 
 # Quick Look Plugins
 cask 'qlmarkdown'
-cask 'quicklook-json'
 cask 'quicklook-csv'
-
