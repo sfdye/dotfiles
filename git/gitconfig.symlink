@@ -58,9 +58,13 @@
   diffFilter = delta --color-only
 [sequence]
 	editor = interactive-rebase-tool
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [url "git@github.com:"]
  insteadOf = https://github.com/
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
+	helper =
+	helper = !gh auth git-credential
