@@ -112,6 +112,7 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 if command -v claude &> /dev/null; then
-  alias ccd='claude --dangerously-skip-permissions'
+  alias ccd='claude --dangerously-skip-permissions --model opus --effort high'
+  alias ccw='claude --worktree --dangerously-skip-permissions --model opus --effort high'
 fi
 
