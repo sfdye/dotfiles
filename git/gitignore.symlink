@@ -235,7 +235,11 @@ supervisord.pid
 
 .vscode/
 
+### AI agents / MCP tooling ###
 .claude/
+.codex/
+.agents/
+.playwright-mcp/
 
 ### Eclipse / jdtls ###
 # Eclipse JDT Language Server project files
