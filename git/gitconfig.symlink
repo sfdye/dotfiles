@@ -1,8 +1,10 @@
 # Local/private config goes in the include
 [include]
   path = ~/.gitconfig.local
+  path = ~/.gitconfig.private
 [alias]
-  co = checkout
+  # `co main`/`co master` resolve to the repo's actual default branch
+  co = "!f() { if [ \"$1\" = main ] || [ \"$1\" = master ]; then def=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's@^origin/@@'); if [ -z \"$def\" ]; then if git show-ref --verify --quiet refs/heads/main; then def=main; elif git show-ref --verify --quiet refs/heads/master; then def=master; else def=$1; fi; fi; shift; git checkout \"$def\" \"$@\"; else git checkout \"$@\"; fi; }; f"
   ci = commit
   br = branch
   st = status
