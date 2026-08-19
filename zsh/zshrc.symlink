@@ -116,3 +116,9 @@ if command -v claude &> /dev/null; then
   alias ccw='claude --worktree --dangerously-skip-permissions --model opus --effort high'
 fi
 
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+if command -v opencode &> /dev/null; then
+  alias oc='opencode'
+  alias oca='opencode --auto'
+fi
