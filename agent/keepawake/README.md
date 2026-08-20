@@ -50,8 +50,8 @@ Requires `jq` (used by the hooks to parse `session_id` from stdin).
 ### OpenCode
 
 `install.sh` also symlinks `opencode-plugin.ts` into
-`~/.config/opencode/plugins/keepawake.ts`, which OpenCode auto-loads at
-startup (no `opencode.json` change needed). The plugin subscribes to session
+`~/.config/opencode/plugins/keepawake.ts`, which OpenCode auto-discovers at
+startup — no `opencode.json` change needed. The plugin subscribes to session
 events and drives the same `keepawake acquire/release` CLI:
 
 - `session.status` busy/retry → `keepawake acquire opencode-<sessionID> --reason opencode`
