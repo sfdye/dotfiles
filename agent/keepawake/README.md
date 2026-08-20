@@ -47,6 +47,14 @@ sweep is the safety net for those.)
 
 Requires `jq` (used by the hooks to parse `session_id` from stdin).
 
+### OpenCode
+
+`install.sh` symlinks `opencode-plugin.ts` into `~/.config/opencode/plugins/`
+(auto-discovered, no config change needed):
+
+- `session.status` busy/retry → `keepawake acquire opencode-<sessionID> --reason opencode`
+- `session.status` idle, `session.idle`, `session.deleted` → `keepawake release opencode-<sessionID>`
+
 ## Usage
 
 ```sh
