@@ -47,6 +47,22 @@ sweep is the safety net for those.)
 
 Requires `jq` (used by the hooks to parse `session_id` from stdin).
 
+### OpenCode
+
+`install.sh` also symlinks `opencode-plugin.ts` into
+`~/.config/opencode/plugins/keepawake.ts`, which OpenCode auto-loads at
+startup (no `opencode.json` change needed). The plugin subscribes to session
+events and drives the same `keepawake acquire/release` CLI:
+
+- `session.status` busy/retry → `keepawake acquire opencode-<sessionID> --reason opencode`
+- `session.status` idle, `session.idle`, `session.deleted` → `keepawake release opencode-<sessionID>`
+
+Permission prompts need no special handling: the session stays `busy` while a
+prompt is open, so the busy-hold covers the wait. Crashes / `kill -9` self-heal
+via the 60s sweep (dead-pid prune), same as Claude Code. Holds are keyed by
+session ID, so overlapping sessions (e.g. a subagent alongside the parent)
+reference-count correctly under one `caffeinate`.
+
 ## Usage
 
 ```sh

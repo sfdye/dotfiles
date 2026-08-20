@@ -14,3 +14,4 @@ for agent shortcuts), `path.zsh` first, `completion.zsh` last.
 
 - **[keepawake](keepawake/)** — keep the Mac awake only while an agent is
   actively working, then let it sleep. `caffeinate`-based, no GUI app, no admin.
+  Driven by Claude Code hooks and an OpenCode plugin; one unified hold model.

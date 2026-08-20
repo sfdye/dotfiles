@@ -4,7 +4,7 @@
 # A dependency-light reimplementation of the *design* of adrafinil
 # (https://github.com/kageroumado/adrafinil): hook-driven acquire/release,
 # reference-counted holds, and a self-healing sweep — but as a shell CLI plus
-# Claude Code hooks. No menu-bar app, no root daemon.
+# agent hooks (Claude Code, OpenCode). No menu-bar app, no root daemon.
 #
 # Model
 #   Each "hold" is a file under $HOLDS_DIR. While >=1 valid hold exists we keep a
@@ -56,7 +56,7 @@ find_agent_pid() {
     # first as a single token so comm may safely contain spaces.
     read -r ppid comm < <(ps -o ppid=,comm= -p "$pid" 2>/dev/null)
     case "$comm" in
-      *claude*|*cursor*|*codex*|*node*) echo "$pid"; return 0 ;;
+      *claude*|*cursor*|*codex*|*opencode*|*node*) echo "$pid"; return 0 ;;
     esac
     pid="$ppid"
     guard=$((guard+1))
