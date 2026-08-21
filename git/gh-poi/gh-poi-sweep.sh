@@ -70,6 +70,16 @@ while read -r git_dir; do
   git -C "$repo" rev-parse --is-inside-work-tree >/dev/null 2>&1 || continue
   repos=$((repos + 1))
 
+  # Strip untracked/gitignored files (node_modules, build artifacts) from
+  # .claude/worktrees/ so gh-poi's safety check doesn't block deletion of
+  # worktrees whose PRs are already merged.
+  wt_dir="$repo/.claude/worktrees"
+  if [[ -d "$wt_dir" ]]; then
+    while read -r wt; do
+      [[ -d "$wt" ]] && git -C "$wt" clean -fdx </dev/null >/dev/null 2>&1
+    done < <(find "$wt_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
+  fi
+
   # gh-poi runs in cwd; </dev/null guards against any unexpected prompt in the
   # TTY-less launchd environment.
   out="$(cd "$repo" && gh poi "${POI_ARGS[@]}" </dev/null 2>&1)"
