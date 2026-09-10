@@ -85,7 +85,7 @@ if command -v pyenv &> /dev/null; then
 fi
 
 
-# jenv (lazy-loaded: eager init + rehash costs ~450ms per shell)
+# jenv
 if command -v jenv &> /dev/null; then
   export PATH="$HOME/.jenv/bin:$PATH"
   jenv() {
