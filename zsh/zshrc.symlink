@@ -77,6 +77,19 @@ if command -v pyenv &> /dev/null; then
 
   eval "$(pyenv init -)"
 
+  # pyenv-virtualenv (lazy: initialized on first cd into a dir with a .python-version)
+  autoload -Uz add-zsh-hook
+  _pyenv_venv_init() {
+    if [[ -e .python-version ]]; then
+      add-zsh-hook -d chpwd _pyenv_venv_init
+      unfunction _pyenv_venv_init
+      unset PYENV_VIRTUALENV_DISABLE_PROMPT
+      eval "$(pyenv virtualenv-init -)"
+    fi
+  }
+  add-zsh-hook chpwd _pyenv_venv_init
+  _pyenv_venv_init
+
   # pyenv-virtualenvwrapper
   export WORKON_HOME=~/.pyenv/versions
   export PROJECT_HOME=$PROJECTS
@@ -125,12 +138,3 @@ if command -v opencode &> /dev/null; then
   alias oc='opencode'
   alias oca='opencode --auto'
 fi
-
-export PATH=$PATH:$HOME/.maestro/bin
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
