@@ -129,7 +129,7 @@ fi
 export PATH=$PATH:$HOME/.maestro/bin
 
 # bun completions
-[ -s "/Users/lwan/.bun/_bun" ] && source "/Users/lwan/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
