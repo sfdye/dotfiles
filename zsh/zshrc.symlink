@@ -29,8 +29,16 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
+# reuse the completion dump unless it's over a day old; a full rebuild
+# (compaudit + compdump) costs over a second
 autoload -U +X compinit
-compinit
+compdump_file="${ZDOTDIR:-$HOME}/.zcompdump"
+if [[ -n $compdump_file(#qN.mh+24) ]]; then
+  compinit -d $compdump_file
+else
+  compinit -C -d $compdump_file
+fi
+unset compdump_file
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -56,11 +64,6 @@ export BAT_THEME="TwoDark"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# brew init for Apple Silicon
-if [[ `uname -m` == 'arm64' ]]; then
-  eval $(/opt/homebrew/bin/brew shellenv)
-fi
-
 # pyenv
 if command -v pyenv &> /dev/null; then
 
@@ -74,9 +77,18 @@ if command -v pyenv &> /dev/null; then
 
   eval "$(pyenv init -)"
 
-  # pyenv-virtualenv
-  unset PYENV_VIRTUALENV_DISABLE_PROMPT
-  eval "$(pyenv virtualenv-init -)"
+  # pyenv-virtualenv (lazy: initialized on first cd into a dir with a .python-version)
+  autoload -Uz add-zsh-hook
+  _pyenv_venv_init() {
+    if [[ -e .python-version ]]; then
+      add-zsh-hook -d chpwd _pyenv_venv_init
+      unfunction _pyenv_venv_init
+      unset PYENV_VIRTUALENV_DISABLE_PROMPT
+      eval "$(pyenv virtualenv-init -)"
+    fi
+  }
+  add-zsh-hook chpwd _pyenv_venv_init
+  _pyenv_venv_init
 
   # pyenv-virtualenvwrapper
   export WORKON_HOME=~/.pyenv/versions
@@ -89,7 +101,11 @@ fi
 # jenv
 if command -v jenv &> /dev/null; then
   export PATH="$HOME/.jenv/bin:$PATH"
-  eval "$(jenv init -)"
+  jenv() {
+    unset -f jenv
+    eval "$(command jenv init -)"
+    jenv "$@"
+  }
 fi
 
 # fzf & fd
