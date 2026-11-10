@@ -241,6 +241,9 @@ supervisord.pid
 .agents/
 .playwright-mcp/
 
+### Git worktrees (per-repo) ###
+.worktrees/
+
 ### Eclipse / jdtls ###
 # Eclipse JDT Language Server project files
 .classpath
