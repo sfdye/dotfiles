@@ -122,3 +122,17 @@ if command -v opencode &> /dev/null; then
   alias oc='opencode'
   alias oca='opencode --auto'
 fi
+export PATH=$PATH:$HOME/.maestro/bin
+
+# bun
+if command -v bun &> /dev/null; then
+  [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/lwan/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions
